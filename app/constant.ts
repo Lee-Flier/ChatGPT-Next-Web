@@ -153,12 +153,12 @@ export const Anthropic = {
 };
 
 export const OpenaiPath = {
-  ChatPath: "v1/chat/completions",
-  SpeechPath: "v1/audio/speech",
-  ImagePath: "v1/images/generations",
+  ChatPath: "chat/completions",
+  SpeechPath: "audio/speech",
+  ImagePath: "images/generations",
   UsagePath: "dashboard/billing/usage",
   SubsPath: "dashboard/billing/subscription",
-  ListModelPath: "v1/models",
+  ListModelPath: "models",
 };
 
 export const Azure = {
