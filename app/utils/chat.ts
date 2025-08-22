@@ -590,7 +590,10 @@ export function streamWithThink(
         if (msg.data === "[DONE]" || finished) {
           return finish();
         }
-        const text = msg.data;
+        let text: any = msg.data;
+        if ((typeof text) === "object") {
+          text = text?.choices[0]?.delta?.content;
+        }
         // Skip empty messages
         if (!text || text.trim().length === 0) {
           return;
