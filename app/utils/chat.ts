@@ -361,8 +361,8 @@ export function stream(
         if (msg.data === "[DONE]" || finished) {
           return finish();
         }
-        const text = msg.data;
-        if (typeof text === "object") {
+        let text = msg.data;
+        if ((typeof text) === "object") {
           text = text?.choices[0]?.delta?.content;
         }
         // Skip empty messages
