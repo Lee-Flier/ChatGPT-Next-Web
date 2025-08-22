@@ -361,7 +361,7 @@ export function stream(
         if (msg.data === "[DONE]" || finished) {
           return finish();
         }
-        let text = msg.data;
+        let text: any = msg.data;
         if ((typeof text) === "object") {
           text = text?.choices[0]?.delta?.content;
         }
