@@ -362,6 +362,9 @@ export function stream(
           return finish();
         }
         const text = msg.data;
+        if (typeof text === "object") {
+          text = text?.choices[0]?.delta?.content;
+        }
         // Skip empty messages
         if (!text || text.trim().length === 0) {
           return;
